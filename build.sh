@@ -13,6 +13,7 @@ alist_bin_path=$(pwd)/alist_extract/data/data/com.termux/files/usr/bin/alist
 upx -9 ${alist_bin_path} -o alist_${LATEST_VERSION}_aarch64_upx
 mv alist_${LATEST_VERSION}_aarch64_upx ../bin/alist
 cd ..
+rm -rf temp
 ALIST_VERSION=$(grep -oP '^version=\K\S+' module.prop)
 sed -i "s/^version=$ALIST_VERSION$/version=v$LATEST_VERSION/" module.prop
-zip -r Alist-Server.zip * -x build.sh temp/* .github/*
+zip -r Alist-Server.zip * -x build.sh update.json .github/* 
