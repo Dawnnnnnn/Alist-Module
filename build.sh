@@ -1,6 +1,6 @@
-apt-get update
-apt-get upgrade
-apt-get install upx,git,curl,unzip -y
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install upx,git,curl,unzip -y
 LATEST_VERSION=$(curl -s https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main/pool/main/a/alist/ | grep -oE 'alist_([0-9]+\.){2}[0-9]+' | head -n 1 | cut -d _ -f 2)
 echo $LATEST_VERSION
 LATEST_DOWNLOAD_URL=https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main/pool/main/a/alist/alist_${LATEST_VERSION}_aarch64.deb
@@ -15,4 +15,4 @@ mv alist_${LATEST_VERSION}_aarch64_upx ../bin/alist
 cd ..
 ALIST_VERSION=$(grep -oP '^version=\K\S+' module.prop)
 sed -i "s/^version=$ALIST_VERSION$/version=v$LATEST_VERSION/" module.prop
-zip -r Alist-Server.zip * -x build.sh temp/ .github/
+zip -r Alist-Server.zip * -x build.sh temp/* .github/*
