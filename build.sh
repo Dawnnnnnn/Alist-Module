@@ -1,6 +1,6 @@
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install upx,git,curl,unzip -y
+sudo apt-get install upx git curl unzip -y
 LATEST_VERSION=$(curl -s https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main/pool/main/a/alist/ | grep -oE 'alist_([0-9]+\.){2}[0-9]+' | head -n 1 | cut -d _ -f 2)
 echo $LATEST_VERSION
 LATEST_DOWNLOAD_URL=https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main/pool/main/a/alist/alist_${LATEST_VERSION}_aarch64.deb

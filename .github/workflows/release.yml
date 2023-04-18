@@ -33,7 +33,8 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        upload_url: https://uploads.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.id }}/assets{?name,label}
         asset_path: ./Alist-Server.zip
         asset_name: Alist-Server.zip
-        tag_name: ${{ github.ref }}
+        asset_content_type: application/zip
+        asset_label: ${{ github.ref }}
