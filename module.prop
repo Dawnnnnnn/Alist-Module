@@ -1,7 +1,7 @@
 id=Alist
 name=Alist
-version=v3.28.0
-versionCode=10
+version=v3.29.1
+versionCode=11
 author=Dawnnnnnn
 description=模块未成功运行
 updateJson=https://raw.githubusercontent.com/Dawnnnnnn/Alist-Module/main/update.json
